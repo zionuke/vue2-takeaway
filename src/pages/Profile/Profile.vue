@@ -1,12 +1,12 @@
 <template>
   <div>
-    App vue template
+    Profile vue template
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App',
+  name: 'Profile',
   data () {
     return {
 

@@ -1,12 +1,12 @@
 <template>
   <div>
-    App vue template
+    Search vue template
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App',
+  name: 'Search',
   data () {
     return {
 

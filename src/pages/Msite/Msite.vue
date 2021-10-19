@@ -1,12 +1,12 @@
 <template>
   <div>
-    App vue template
+    Msite vue template
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App',
+  name: 'Msite',
   data () {
     return {
 
