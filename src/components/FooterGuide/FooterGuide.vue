@@ -1,14 +1,12 @@
 <template>
   <div>
-    <router-view></router-view>
-    <FooterGuide></FooterGuide>
+    FooterGuide vue template
   </div>
 </template>
 
 <script>
-import FooterGuide from '@/components/FooterGuide/FooterGuide'
 export default {
-  name: 'App',
+  name: 'FooterGuide',
   data () {
     return {
 
@@ -18,7 +16,7 @@ export default {
 
   },
   components: {
-    FooterGuide
+
   }
 }
 </script>
