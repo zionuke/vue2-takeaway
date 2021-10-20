@@ -1,9 +1,9 @@
 /*
 路由器对象模块
 */
-import Vue from "vue"
-import VueRouter from "vue-router"
-import Msite from '@/pages/Msite/Msite'
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import MSite from '@/pages/MSite/MSite'
 import Search from '@/pages/Search/Search'
 import Order from '@/pages/Order/Order'
 import Profile from '@/pages/Profile/Profile'
@@ -16,7 +16,7 @@ export default new VueRouter({
   routes: [
     {
       path: '/msite',
-      component: Msite
+      component: MSite
     },
     {
       path: '/search',
