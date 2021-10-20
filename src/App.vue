@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <router-view></router-view>
-    <FooterGuide></FooterGuide>
+    <!-- 当前路由需要展示导航栏才显示 -->
+    <FooterGuide v-show="$route.meta.showFooter"></FooterGuide>
   </div>
 </template>
 
