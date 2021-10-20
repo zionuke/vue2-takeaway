@@ -1,7 +1,7 @@
 <template>
   <section class="msite">
     <!--首页头部-->
-    <header class="msite_header">
+    <header class="header">
       <span class="header_search">
         <i class="iconfont icon-sousuo"></i>
       </span>
@@ -312,7 +312,7 @@ export default {
 @import "../../common/stylus/mixins.styl"
 .msite  //首页
   width 100%
-  .msite_header
+  .header
     background-color #02a774
     position fixed
     z-index 100
