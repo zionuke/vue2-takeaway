@@ -30,6 +30,7 @@ export default {
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
+@import "../../common/stylus/mixins.styl"
 .search  //搜索
   width 100%
   .header
