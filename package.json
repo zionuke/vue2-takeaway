@@ -11,6 +11,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "swiper": "^4.2.6",
     "vue": "^2.5.2",
     "vue-router": "^3.5.2"
   },

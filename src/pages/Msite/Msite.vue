@@ -294,6 +294,8 @@
 
 <script>
 import HeaderTop from '@/components/HeaderTop/HeaderTop'
+import Swiper from 'swiper'
+import 'swiper/dist/css/swiper.min.css'
 export default {
   name: 'MSite',
   data () {
@@ -302,6 +304,16 @@ export default {
   methods: {},
   components: {
     HeaderTop
+  },
+  mounted () {
+    // 创建一个swiper实例对象，来实现轮播
+    new Swiper('.swiper-container', {
+      loop: true, // 可以循环轮播
+      // 如果需要分页器
+      pagination: {
+        el: '.swiper-pagination',
+      }
+    })
   }
 }
 </script>
