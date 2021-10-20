@@ -311,7 +311,7 @@ export default {
       loop: true, // 可以循环轮播
       // 如果需要分页器
       pagination: {
-        el: '.swiper-pagination',
+        el: '.swiper-pagination'
       }
     })
   }
