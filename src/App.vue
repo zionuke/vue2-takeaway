@@ -8,12 +8,11 @@
 
 <script>
 import FooterGuide from '@/components/FooterGuide/FooterGuide'
-import {reqCategorys} from './api'
+
 export default {
   name: 'App',
-  async mounted() {
-    let result = await reqCategorys()
-    console.log(result)
+  mounted() {
+    this.$store.dispatch('getAddress')
   },
   data () {
     return {
