@@ -82,6 +82,35 @@ export default {
       return Arr
     }
   },
+  watch: {
+    categorys (value) { // categorys数组中有数据了, 在异步更新界面之前执行
+      // 使用setTimeout可以实现效果, 但不是太好
+      /*setTimeout(() => {
+        // 创建一个Swiper实例对象, 来实现轮播
+        new Swiper('.swiper-container', {
+          loop: true, // 可以循环轮播
+          // 如果需要分页器
+          pagination: {
+            el: '.swiper-pagination',
+          },
+        })
+      }, 100)*/
+
+      // 界面更新就立即创建Swiper对象
+      this.$nextTick(() => {// 一旦完成界面更新, 立即调用(此条语句要写在数据更新之后)
+        // 创建一个Swiper实例对象, 来实现轮播
+        new Swiper('.swiper-container', {
+          loop: true, // 可以循环轮播
+          // 如果需要分页器
+          pagination: {
+            el: '.swiper-pagination',
+          },
+        })
+
+      })
+
+    }
+  },
   methods: {
     ...mapActions(['getAddress','getCategorys'])
   },
@@ -95,14 +124,6 @@ export default {
     this.getAddress()
     this.getCategorys()
 
-    // 创建一个swiper实例对象，来实现轮播
-    new Swiper('.swiper-container', {
-      loop: true, // 可以循环轮播
-      // 如果需要分页器
-      pagination: {
-        el: '.swiper-pagination'
-      }
-    })
   }
 }
 </script>
