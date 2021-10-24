@@ -112,7 +112,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['getAddress','getCategorys'])
+    ...mapActions(['getAddress','getCategorys','getShops'])
   },
   components: {
     HeaderTop,
@@ -123,7 +123,7 @@ export default {
     // this.$store.dispatch('getAddress')
     this.getAddress()
     this.getCategorys()
-
+    this.getShops()
   }
 }
 </script>
