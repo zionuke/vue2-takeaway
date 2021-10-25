@@ -34,11 +34,11 @@
           <div :class="{on: !loginMethod}">
             <section>
               <section class="login_message">
-                <input type="tel" maxlength="11" placeholder="手机/邮箱/用户名">
+                <input type="tel" maxlength="11" placeholder="手机/邮箱/用户名" autocomplete="username">
               </section>
               <section class="login_verification">
                 <input type="text" maxlength="8" placeholder="密码" v-if="showPwd" v-model="pwd">
-                <input type="password" maxlength="8" placeholder="密码" v-else v-model="pwd">
+                <input type="password" maxlength="8" placeholder="密码" v-else v-model="pwd" autocomplete="current-password">
                 <div class="switch_button" :class="showPwd?'on':'off'" @click="showPwd=!showPwd">
                   <div class="switch_circle" :class="{right:showPwd}"></div>
                   <span class="switch_text">{{showPwd ? 'abc' :'...'}}</span>
