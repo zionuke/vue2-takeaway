@@ -69,6 +69,7 @@
 
 <script>
 import AlertTip from '@/components/AlertTip/AlertTip'
+import {reqSendCode, reqSmsLogin, reqPwdLogin} from '../../api'
 
 export default {
   name: 'Login',
@@ -96,7 +97,7 @@ export default {
   },
   methods: {
     // 异步获取短信验证码
-    getCode () {
+    async getCode () {
       // 如果当前没有计时
       if(!this.computeTime){
         // 启动倒计时
@@ -109,6 +110,16 @@ export default {
           }
         }, 1000)
         // 发送ajax请求(向指定手机号发送验证码短信)
+        const result = await reqSendCode(this.phone)
+        if(result.code === 1){
+          // 显示提示
+          this.showAlert(result.msg)
+          // 停止计时
+          if(this.computeTime){
+            this.computeTime = 0
+            clearInterval(intervalId)
+          }
+        }
       }
     },
     // 显示警告
