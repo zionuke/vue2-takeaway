@@ -19,7 +19,7 @@ module.exports = {
       '/api': { // 匹配所有以 '/api'开头的请求路径
         target: 'http://localhost:4000', // 代理目标的基础路径
         // secure: false,  // 如果是https接口，需要配置这个参数
-        changeOrigin: true, // 支持跨域
+        changeOrigin: true, // changeOrigin设置为true时，服务器收到的请求头中的host为：localhost:4000;设置为false则为localhost:8080
         pathRewrite: { // 重写路径: 去掉路径中开头的'/api'
           '^/api': ''
         }
