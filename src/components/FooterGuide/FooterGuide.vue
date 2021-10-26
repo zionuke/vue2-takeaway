@@ -30,18 +30,10 @@
 <script>
 export default {
   name: 'FooterGuide',
-  data () {
-    return {
-      goTo (path) {
-        this.$router.replace(path)
-      }
-    }
-  },
   methods: {
-
-  },
-  components: {
-
+    goTo (path) {
+      this.$router.replace(path)
+    }
   }
 }
 </script>

@@ -54,3 +54,11 @@ export default new VueRouter({
     }
   ]
 })
+
+/*解决重复点击同一个标签实现路由跳转报错问题：下面三行语句解决报错问题
+* Uncaught (in promise) NavigationDuplicated
+* {_name: “NavigationDuplicated”, name: "NavigationDuplic}的报错问*/
+const VueRouterReplace = VueRouter.prototype.replace;
+VueRouter.prototype.replace = function replace (to) {
+  return VueRouterReplace.call(this, to).catch(err => err);
+}
