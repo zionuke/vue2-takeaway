@@ -51,6 +51,7 @@
                   src="http://localhost:4000/captcha" 
                   alt="captcha"
                   @click="getCaptcha"
+                  ref="captcha"
                 >
               </section>
             </section>
@@ -102,11 +103,13 @@ export default {
       if(!this.computeTime){
         // 启动倒计时
         this.computeTime = 30
-        const intervalId = setInterval(()=>{
+        // intervalId放在组件实例对象上可以跨函数使用
+        this.intervalId = setInterval(()=>{
           this.computeTime--
           if(this.computeTime === 0){
             // 停止计时
-            clearInterval(intervalId)
+            clearInterval(this.intervalId)
+            this.intervalId = undefined
           }
         }, 1000)
         // 发送ajax请求(向指定手机号发送验证码短信)
@@ -117,7 +120,8 @@ export default {
           // 停止计时
           if(this.computeTime){
             this.computeTime = 0
-            clearInterval(intervalId)
+            clearInterval(this.intervalId)
+            this.intervalId = undefined
           }
         }
       }
@@ -128,10 +132,11 @@ export default {
       this.alertText = alertText
     },
     // 异步登陆
-    login () {
+    async login () {
+      let result
       // 前台表单验证
       if(this.loginMethod) {  // 短信登陆
-        const {rightPhone, code} = this
+        const {rightPhone, phone, code} = this
         if(!rightPhone) {
           // 手机号不正确
           this.showAlert('手机号不正确')
@@ -141,8 +146,10 @@ export default {
           this.showAlert('验证必须是6位数字')
           return
         }
-      } 
-      else {// 密码登陆
+        // 发送ajax请求短信登陆
+        result = await reqSmsLogin(phone, code)
+      } else {// 密码登陆
+        const {name, pwd, captcha} = this
         if(!this.name) {
           // 用户名必须指定
           this.showAlert('用户名必须指定')
@@ -156,7 +163,32 @@ export default {
           this.showAlert('验证码必须指定')
           return
         }
+        // 发送ajax请求密码登陆
+        result = await reqPwdLogin({name, pwd, captcha})
       }
+
+      // 停止计时
+      if(this.computeTime) {
+        this.computeTime = 0
+        clearInterval(this.intervalId)
+        this.intervalId = undefined
+      }
+
+      // 根据结果数据统一处理
+      if(result.code === 0){
+        const user = result.data
+        // 将user保存到vuex的state
+
+        // 去个人中心界面
+        this.$router.replace('/profile')
+      } else {
+        // 显示新的图片验证码
+        this.getCaptcha()
+        // 显示警告提示
+        const msg = result.msg
+        this.showAlert(msg)
+      }
+
     },
     // 关闭警告框
     closeTip () {
@@ -164,9 +196,9 @@ export default {
       this.alertText = ''
     },
     // 获取一个新的图片验证码
-    getCaptcha (event) {
+    getCaptcha () {
       // 每次指定的src要不一样，这里不是ajax请求，不涉及跨域
-      event.target.src = 'http://localhost:4000/captcha?time=' + Date.now()
+      this.$refs.captcha.src = 'http://localhost:4000/captcha?time=' + Date.now()
     }
   }
 }
