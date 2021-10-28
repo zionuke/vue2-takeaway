@@ -73,7 +73,14 @@ export default {
       this.$nextTick(() => { // 列表数据更新显示后执行
         // 列表显示之后创建
         new BScroll('.menu-wrapper')
-        new BScroll('.foods-wrapper')
+        // 给右侧列表绑定scroll监听
+        const foodsScroll = new BScroll('.foods-wrapper', {
+          probeType: 2,  // 因为惯性滑动不会触发
+        })
+        foodsScroll.on('scroll',({x,y})=>{
+          console.log(x, y)
+          this.scrollY = Math.abs(y)
+        })
       })
     })
   },
