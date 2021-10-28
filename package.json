@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "better-scroll": "^2.4.2",
     "mint-ui": "^2.2.13",
     "mockjs": "^1.1.0",
     "swiper": "^4.2.6",
