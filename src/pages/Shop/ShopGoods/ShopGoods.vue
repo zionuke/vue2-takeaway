@@ -9,6 +9,7 @@
             v-for="(good, index) in goods" 
             :key="index"
             :class="{current: index===currentIndex}"
+            @click="clickMenuItem(index)"
           >
             <span class="text bottom-border-1px">
               <img
@@ -99,9 +100,11 @@ export default {
     _initScroll() {
       // 列表显示之后创建
       new BScroll('.menu-wrapper', {
+        click: true
       })
       this.foodsScroll = new BScroll('.foods-wrapper', {
         probeType: 2,  // 因为惯性滑动不会触发
+        click: true
       })
 
       // 给右侧列表绑定scroll监听
@@ -133,6 +136,17 @@ export default {
       this.tops = tops
       console.log(tops)
     },
+    clickMenuItem (index) {
+      // console.log(index)
+      // 使用右侧列表滑动到对应的位置
+
+      // 得到目标位置的scrollY
+      const scrollY = this.tops[index]
+      // 立即更新scrollY(让点击的分类项成为当前分类)
+      this.scrollY = scrollY
+      // 平滑滑动右侧列表
+      this.foodsScroll.scrollTo(0, -scrollY, 300)
+    }
   },
 }
 </script>
