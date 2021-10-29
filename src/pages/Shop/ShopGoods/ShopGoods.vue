@@ -47,7 +47,7 @@
                     <span class="old" v-if="food.oldPrice">￥{{food.oldPrice}}</span>
                   </div>
                   <div class="cartcontrol-wrapper">
-                    CartControl
+                    <CartControl :food="food" ></CartControl>
                   </div>
                 </div>
               </li>
@@ -62,10 +62,13 @@
 <script>
 import BScroll from 'better-scroll'
 import {mapState} from 'vuex'
+import CartControl from '@/components/CartControl/CartControl'
 
 export default {
   name: "ShopGoods",
-  components: {},
+  components: {
+    CartControl
+  },
   data() {
     return {
       scrollY: 0, // 右侧滑动的Y轴坐标 (滑动过程时实时变化)
