@@ -123,12 +123,12 @@ export default {
 
       // 给右侧列表绑定scroll监听
       this.foodsScroll.on('scroll', ({x, y}) => {
-        console.log(x, y)
+        // console.log(x, y)
         this.scrollY = Math.abs(y)
       })
       // 给右侧列表绑定scroll结束的监听
       this.foodsScroll.on('scrollEnd', ({x, y}) => {
-        console.log('scrollEnd', x, y)
+        // console.log('scrollEnd', x, y)
         this.scrollY = Math.abs(y)
       })
     },
@@ -148,7 +148,7 @@ export default {
 
       // 3. 更新数据
       this.tops = tops
-      console.log(tops)
+      // console.log(tops)
     },
     clickMenuItem (index) {
       // console.log(index)
