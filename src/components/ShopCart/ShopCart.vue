@@ -4,14 +4,18 @@
       <div class="content">
         <div class="content-left">
           <div class="logo-wrapper">
-            <div class="logo highlight"> <i class="iconfont icon-shopping_cart highlight"></i> </div>
-            <div class="num">1</div>
+            <div class="logo" :class="{highlight: totalCount}"> 
+              <i class="iconfont icon-shopping_cart" :class="{highlight: totalCount}"></i> 
+            </div>
+            <div class="num" v-show="totalCount">{{totalCount}}</div>
           </div>
-          <div class="price highlight">￥10</div>
-          <div class="desc">另需配送费￥4 元</div>
+          <div class="price" :class="{highlight: totalCount}">￥{{totalPrice}}</div>
+          <div class="desc">另需配送费￥{{info.deliveryPrice}}元</div>
         </div>
         <div class="content-right">
-          <div class="pay not-enough"> 还差￥10 元起送 </div>
+          <div class="pay" :class="payClass">
+            {{payText}}
+          </div>
         </div>
       </div>
       <div class="shopcart-list" style="display: none;">
@@ -20,7 +24,8 @@
         </div>
         <div class="list-content">
           <ul>
-            <li class="food"> <span class="name">红枣山药糙米粥</span>
+            <li class="food"> 
+              <span class="name">红枣山药糙米粥</span>
               <div class="price"><span>￥10</span></div>
               <div class="cartcontrol-wrapper">
                 <div class="cartcontrol">
@@ -49,7 +54,21 @@ export default {
   },
   computed: {
     ...mapState(['cartFoods', 'info']),
-    ...mapGetters(['totalCount', 'totalPrice']),
+    ...mapGetters(['totalCount', 'totalPrice']), 
+    payClass () {
+      return this.totalPrice >= this.info.minPrice ? 'enough' : 'not-enough'
+    },
+    payText () {
+      const {totalPrice} = this
+      const {minPrice} = this.info
+      if(totalPrice===0) {
+        return `￥${minPrice}元起送`
+      } else if(totalPrice<minPrice) {
+        return `还差￥${minPrice-totalPrice}元起送`
+      } else {
+        return '结算'
+      }
+    },
   },
   methods: {},
 }
