@@ -61,7 +61,9 @@
         </ul>
       </div>
     </div>
-    <Food :food="food" ref="food"></Food>
+    <transition name="fade">
+      <Food :food="food" ref="food"></Food>
+    </transition>
   </div>
 </template>
 
@@ -172,6 +174,11 @@ export default {
 
 <style lang="stylus" rel="stylesheet/stylus">
   @import "../../../common/stylus/mixins.styl"
+  .fade-enter-active, .fade-leave-active
+    transition all .5s
+  .fade-enter, .fade-leave-to 
+    opacity 0
+    
   .goods
     display: flex
     position: absolute
