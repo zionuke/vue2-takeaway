@@ -2,7 +2,7 @@
   <div>
     <div class="shopcart">
       <div class="content">
-        <div class="content-left">
+        <div class="content-left" @click="toggleShow">
           <div class="logo-wrapper">
             <div class="logo" :class="{highlight: totalCount}"> 
               <i class="iconfont icon-shopping_cart" :class="{highlight: totalCount}"></i> 
@@ -18,39 +18,43 @@
           </div>
         </div>
       </div>
-      <div class="shopcart-list" style="display: none;">
+      <div class="shopcart-list" v-show="isShow">
         <div class="list-header">
-          <h1 class="title">购物车</h1> <span class="empty">清空</span>
+          <h1 class="title">购物车</h1> 
+          <span class="empty">清空</span>
         </div>
         <div class="list-content">
           <ul>
-            <li class="food"> 
-              <span class="name">红枣山药糙米粥</span>
-              <div class="price"><span>￥10</span></div>
+            <li class="food" v-for="(food, index) in cartFoods" :key="index"> 
+              <span class="name">{{food.name}}</span>
+              <div class="price">
+                <span>￥{{food.price}}</span>
+              </div>
               <div class="cartcontrol-wrapper">
-                <div class="cartcontrol">
-                  <div class="iconfont icon-remove_circle_outline"></div>
-                  <div class="cart-count">1</div>
-                  <div class="iconfont icon-add_circle"></div>
-                </div>
+                <CartControl :food="food"></CartControl>
               </div>
             </li>
           </ul>
         </div>
       </div>
     </div>
-    <div class="list-mask" style="display: none;"></div>
+    <div class="list-mask" v-show="isShow" @click="toggleShow"></div>
   </div>
 </template>
 
 <script>
 import {mapState, mapGetters} from 'vuex'
+import CartControl from '@/components/CartControl/CartControl'
 
 export default {
   name: "ShopCart",
-  components: {},
+  components: {
+    CartControl
+  },
   data() {
-    return {}
+    return {
+      isShow: false
+    }
   },
   computed: {
     ...mapState(['cartFoods', 'info']),
@@ -70,7 +74,11 @@ export default {
       }
     },
   },
-  methods: {},
+  methods: {
+    toggleShow() {
+      this.isShow = !this.isShow
+    }
+  },
 }
 </script>
 
@@ -246,4 +254,3 @@ export default {
       opacity 0
       background rgba(7, 17, 27, 0)
 </style>
-
