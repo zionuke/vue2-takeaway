@@ -60,6 +60,7 @@
           </li>
         </ul>
       </div>
+      <ShopCart></ShopCart>
     </div>
     <transition name="fade">
       <Food :food="food" ref="food"></Food>
@@ -72,12 +73,14 @@ import BScroll from 'better-scroll'
 import {mapState} from 'vuex'
 import CartControl from '@/components/CartControl/CartControl'
 import Food from '@/components/Food/Food'
+import ShopCart from '@/components/ShopCart/ShopCart'
 
 export default {
   name: "ShopGoods",
   components: {
     CartControl,
-    Food
+    Food,
+    ShopCart
   },
   data() {
     return {

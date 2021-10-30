@@ -1,3 +1,12 @@
 /*
 包含多个基于state的getter计算属性的对象
  */
+export default {
+  totalCount(state) {
+    return state.cartFoods.reduce((prev, food) => prev + food.count, 0)
+  },
+
+  totalPrice(state) {
+    return state.cartFoods.reduce((prev, food) => prev + food.count*food.price, 0)
+  }
+}
