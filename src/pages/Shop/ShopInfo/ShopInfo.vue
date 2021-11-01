@@ -57,6 +57,7 @@
 
 <script>
 import {mapState} from 'vuex'
+import BScroll from 'better-scroll'
 
 export default {
   name: "ShopInfo",
@@ -69,7 +70,26 @@ export default {
   computed: {
     ...mapState(['info'])
   },
-  methods: {},
+  watch: {
+    
+  },
+  mounted() {
+    new BScroll('.shop-info')
+
+    // 动态计算ul的宽度
+    const ul = this.$refs.picsUl
+    const liWidth = 120
+    const space = 6
+    const count = this.info.pics.length
+    ul.style.width = (liWidth + space) * count -space + 'px'
+
+    new BScroll('.pic-wrapper', {
+      scrollX: true // 水平滑动
+    })
+  },
+  methods: {
+
+  },
 }
 </script>
 
