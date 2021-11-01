@@ -61,7 +61,6 @@ import BScroll from 'better-scroll'
 
 export default {
   name: "ShopInfo",
-  components: {},
   data() {
     return {
       supportClasses: ['activity-green', 'activity-red', 'activity-orange']
@@ -71,24 +70,35 @@ export default {
     ...mapState(['info'])
   },
   watch: {
-    
+    info () {// 刷新流程--> 更新数据
+      this.$nextTick(() => {
+        this._initScroll()
+      })
+    }
   },
   mounted() {
-    new BScroll('.shop-info')
+    // 如果数据还没有, 直接结束
+    if(!this.info.pics) {
+      return
+    }
 
-    // 动态计算ul的宽度
-    const ul = this.$refs.picsUl
-    const liWidth = 120
-    const space = 6
-    const count = this.info.pics.length
-    ul.style.width = (liWidth + space) * count -space + 'px'
-
-    new BScroll('.pic-wrapper', {
-      scrollX: true // 水平滑动
-    })
+    // 数据有了, 可以创建BScroll对象形成滑动
+    this._initScroll()
   },
   methods: {
+    _initScroll () {
+      new BScroll('.shop-info')
+      // 动态计算ul的宽度
+      const ul = this.$refs.picsUl
+      const liWidth = 120
+      const space = 6
+      const count = this.info.pics.length
+      ul.style.width = (liWidth + space) * count -space + 'px'
 
+      new BScroll('.pic-wrapper', {
+        scrollX: true // 水平滑动
+      })
+    }
   },
 }
 </script>
