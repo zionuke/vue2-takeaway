@@ -11,19 +11,8 @@
 <script>
 export default {
   name: 'HeaderTop',
-  data () {
-    return {
-
-    }
-  },
   props: {
     title: String
-  },
-  methods: {
-
-  },
-  components: {
-
   }
 }
 </script>
