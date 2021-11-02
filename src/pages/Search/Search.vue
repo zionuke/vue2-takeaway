@@ -81,7 +81,6 @@ export default {
   .search
     width 100%
     height 100%
-    overflow hidden
     .search_form
       clearFix()
       margin-top 45px
