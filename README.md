@@ -59,3 +59,38 @@
 
 1. 手机号登陆，需要自己注册容联云通讯后先添加一个测试账号，然后在server\util\sms_util.js中修改相应个人配置，之后输入符合格式的手机号即可
 2. 密码登陆，默认用户名abc，密码123
+
+## 5. 项目截图
+
+1. 首页
+
+![首页](https://raw.githubusercontent.com/dragon-liu/picBed/master/img/QQ%E5%9B%BE%E7%89%8720211102110806.png?token=AJJYY5S4HG4VEOL4HCZ4AGDBQCW3M)
+<img src="https://raw.githubusercontent.com/dragon-liu/picBed/master/img/QQ%E5%9B%BE%E7%89%8720211102110806.png?token=AJJYY5S4HG4VEOL4HCZ4AGDBQCW3M" width="300" height="500" alt="msite"/>
+
+1. 订单
+
+<img src="/shows/order.png" width="300" height="500" alt="order"/>
+
+3. 搜索
+
+<img src="/shows/search.png" width="300" height="500" alt="search"/>
+
+4. 个人
+
+<img src="/shows/profile.png" width="300" height="500" alt="profile"/>
+
+5. 登陆
+
+<img src="/shows/login.png" width="300" height="500" alt="login"/>
+
+6. 点餐
+
+<img src="/shows/food.png" width="300" height="500" alt="food"/>
+
+7. 评价
+
+<img src="/shows/rating.png" width="300" height="500" alt="rating"/>
+
+8. 商店详情
+
+<img src="/shows/shop-detail.png" width="300" height="500" alt="shop-detail"/>
