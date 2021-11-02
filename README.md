@@ -65,32 +65,31 @@
 1. 首页
 
 ![首页](https://raw.githubusercontent.com/dragon-liu/picBed/master/img/QQ%E5%9B%BE%E7%89%8720211102110806.png?token=AJJYY5S4HG4VEOL4HCZ4AGDBQCW3M)
-<img src="https://raw.githubusercontent.com/dragon-liu/picBed/master/img/QQ%E5%9B%BE%E7%89%8720211102110806.png?token=AJJYY5S4HG4VEOL4HCZ4AGDBQCW3M" width="300" height="500" alt="msite"/>
 
-1. 订单
+2. 订单
 
-<img src="/shows/order.png" width="300" height="500" alt="order"/>
+![订单](https://raw.githubusercontent.com/dragon-liu/picBed/master/img/202111021133379.png)
 
 3. 搜索
 
-<img src="/shows/search.png" width="300" height="500" alt="search"/>
+![搜索](https://raw.githubusercontent.com/dragon-liu/picBed/master/img/202111021134670.png)
 
 4. 个人
 
-<img src="/shows/profile.png" width="300" height="500" alt="profile"/>
+![个人](https://raw.githubusercontent.com/dragon-liu/picBed/master/img/202111021135769.png)
 
 5. 登陆
 
-<img src="/shows/login.png" width="300" height="500" alt="login"/>
+![登陆](https://raw.githubusercontent.com/dragon-liu/picBed/master/img/202111021136950.png)
 
-6. 点餐
+6. 商家信息
 
-<img src="/shows/food.png" width="300" height="500" alt="food"/>
+![商家信息](https://raw.githubusercontent.com/dragon-liu/picBed/master/img/202111021137629.png)
 
-7. 评价
+7. 商家评价
 
-<img src="/shows/rating.png" width="300" height="500" alt="rating"/>
+![商家评价](https://raw.githubusercontent.com/dragon-liu/picBed/master/img/202111021137465.png)
 
-8. 商店详情
+8. 商家详情
 
-<img src="/shows/shop-detail.png" width="300" height="500" alt="shop-detail"/>
+![商家详情](https://raw.githubusercontent.com/dragon-liu/picBed/master/img/202111021138618.png)
