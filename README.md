@@ -1,5 +1,7 @@
 # 简介
 
+本项目根据哔哩哔哩 [Vue项目硅谷外卖](https://www.bilibili.com/video/BV1Lp411d7w4) 视频编写，视频教程讲的比较好，配合本仓库已实现的代码来练习，学习效果更佳，欢迎大家 Star 和 Fork。
+
 ## 1. 项目描述
 
 1. 此项目为一个前后端分离的外卖 Web App (SPA) 项目
@@ -43,7 +45,7 @@
 
 ## 4. 项目开发
 
-[完整项目开发流程说明文档]()
+[完整项目开发流程说明文档](https://github.com/dragon-liu/vue2-takeaway/blob/main/docs/%E5%B0%9A%E7%A1%85%E8%B0%B7_vue%E9%A1%B9%E7%9B%AE-%E7%A1%85%E8%B0%B7%E5%A4%96%E5%8D%96.pdf)
 
 ## 5. 运行项目
 
