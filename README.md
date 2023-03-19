@@ -3,7 +3,7 @@
 ## 1. 项目描述
 
 1. 此项目为一个前后端分离的外卖 Web App (SPA) 项目
-2. 使用了 Vue 全家桶+ES6+Webpack 等前端最新技术
+2. 使用了 Vue 全家桶+ES6+Webpack 等前端技术
 3. 包括商家, 商品, 购物车, 用户等多个功能子模块
 4. 采用模块化、组件化、工程化的模式开发
 
@@ -38,14 +38,9 @@
 6. 学会 flex 弹性布局
 
 ## 3. API接口文档
-
 [项目API接口文档](https://github.com/dragon-liu/vue2-takeaway/blob/main/server/API%E6%96%87%E6%A1%A3.md)
 
-## 4. 项目开发
-
-[完整项目开发流程说明文档](https://github.com/dragon-liu/vue2-takeaway/blob/main/docs/%E5%B0%9A%E7%A1%85%E8%B0%B7_vue%E9%A1%B9%E7%9B%AE-%E7%A1%85%E8%B0%B7%E5%A4%96%E5%8D%96.pdf)
-
-## 5. 运行项目
+## 4. 运行项目
 
 **先运行服务器，再打开项目**
 
@@ -66,7 +61,7 @@
 1. 手机号登陆，需要自己注册容联云通讯后先添加一个测试账号，然后在server\util\sms_util.js中修改相应个人配置，之后输入符合格式的手机号即可
 2. 密码登陆，默认用户名abc，密码123
 
-## 6. 项目截图
+## 5. 项目截图
 
 1. 首页
 
